@@ -56,5 +56,7 @@ The portal Front End is developed by using angular 6 Single page application als
 - Use any free tier on any cloud platform 
 
 ## Enhancement
+- Using an API Gateway in Microservices Architecture
 - Use Automapper to map model to ViewModel
 - Handle unexpected errors
+
