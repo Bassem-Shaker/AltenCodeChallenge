@@ -25,4 +25,25 @@ You can find architectural diagram of the task below.
 
 ![Untitled Diagram (1)](https://user-images.githubusercontent.com/30432856/57252593-c9625180-704c-11e9-8ae0-c1ac3cc7a605.png)
 
+## Solution Structure
+Solution (source code above) is using heavily Dependency Injection (DI) design pattern that reduces hard-coded dependencies between the classes by injecting these dependencies at run-time, instead of during design-time thus it used to control which data set is passed to the control logic (test data vs real database).
+
+Below is a fragment of the solution presents on (visual studio 2017). solution  There are four folders, Each folder contains the projects related to each microservices as well the FrontEnd project, I would split them into seperate each service on a seperate solution but for POC, i created all of them on one solution however there is no direct dependency between them (all microservice useing RabbitMQ).  
+
+
+![image](https://user-images.githubusercontent.com/30432856/57258133-c753bf00-705b-11e9-8808-2161c40cdde3.png)
+
+
+
+Each microservice "CustomersMicroservice,VehiclesCoreMicroservice" service" has:  
+- It's own models and interfaces that exposed to the external world througout the web api
+- Data access layer through Entity framework are encapsulated on one layer
+- Unit test each above service by using Xunit.
+- listeners (for events delivered via queue) and REST Clients (for handling outgoing http requests).
+
+The portal Front End is developed by using angular 6 Single page application also lazy loading module has been taken on this to enhance loading performance as shown below 
+
+![image](https://user-images.githubusercontent.com/30432856/57258961-41854300-705e-11e9-9fd7-146862d5af7e.png)
+
+
 
