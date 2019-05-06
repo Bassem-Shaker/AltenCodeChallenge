@@ -46,10 +46,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{7BF5A1D5-797E-4FEA-8771-9B48080DC957}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{3DCC411E-B21A-4844-8072-B8CECFE60B04}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\bassem.shaker\Desktop\CustomerDatabase.sql = C:\Users\bassem.shaker\Desktop\CustomerDatabase.sql
-		C:\Users\bassem.shaker\Desktop\VehiclesDatabase.sql = C:\Users\bassem.shaker\Desktop\VehiclesDatabase.sql
+		DatabaseScripts\CustomerDatabase.sql = DatabaseScripts\CustomerDatabase.sql
+		DatabaseScripts\VehiclesDatabase.sql = DatabaseScripts\VehiclesDatabase.sql
 	EndProjectSection
 EndProject
 Global
