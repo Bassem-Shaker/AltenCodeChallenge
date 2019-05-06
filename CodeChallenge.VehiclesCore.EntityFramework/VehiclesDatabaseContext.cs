@@ -23,7 +23,6 @@ namespace CodeChallenge.VehiclesCore.EntityFramework
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Console.WriteLine("Connecting to Database = " + _connectionString);
             if (string.IsNullOrWhiteSpace(_connectionString))
             {
                 ConnectionStrings connectionStrings = ConfigurationUtility.GetConnectionStrings();

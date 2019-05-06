@@ -5,7 +5,6 @@ import { VehiclesOverviewComponent } from './vehicles-overview/vehicles-overview
 
 const VehiclesRoutes: Routes = [
     { path: '', component: VehiclesOverviewComponent },
-    // { path: 'VehiclesOverview', component: VehiclesOverviewComponent}
 ];
 
 @NgModule({

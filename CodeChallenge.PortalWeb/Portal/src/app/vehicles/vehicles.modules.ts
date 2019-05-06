@@ -7,11 +7,9 @@ import { VehiclesRoutingModule } from './Vehicles.routing';
 import { VehiclesService } from './vehicles.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material.module';
-// import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
-    // BrowserModule,
     VehiclesRoutingModule,
     FormsModule,
     CommonModule,

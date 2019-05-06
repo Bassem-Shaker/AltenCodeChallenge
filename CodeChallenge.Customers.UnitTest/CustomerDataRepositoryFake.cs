@@ -16,7 +16,7 @@ namespace CodeChallenge.Customers.UnitTest
             {
                new Customer(){ ID=1,Name="Kalles Grustransporter AB",Address="Cementvägen 8, 111 11 Södertälje"},
                new Customer(){ ID=2,Name="Johans Bulk AB",Address=""},
-               new Customer(){ ID=3,Name="",Address=""}
+               new Customer(){ ID=3,Name="Haralds Värdetransporter AB",Address="Budgetvägen 1, 333 33 Uppsala"}
             };
         }
 

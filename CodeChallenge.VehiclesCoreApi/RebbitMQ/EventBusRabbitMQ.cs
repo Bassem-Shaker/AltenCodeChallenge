@@ -35,13 +35,6 @@ namespace CodeChallenge.VehiclesCoreApi.RebbitMQ
 
             var consumer = new EventingBasicConsumer(channel);
 
-            //consumer.Received += async (model, e) =>
-            //{
-            //    var eventName = e.RoutingKey;
-            //    var message = Encoding.UTF8.GetString(e.Body);
-            //    channel.BasicAck(e.DeliveryTag, multiple: false);
-            //};
-
             //Create event when something receive
             consumer.Received += ReceivedEvent;
 
@@ -88,8 +81,6 @@ namespace CodeChallenge.VehiclesCoreApi.RebbitMQ
                 properties.Persistent = true;
                 properties.DeliveryMode = 2;
                 properties.Headers = headers;
-                // properties.Expiration = "36000000";
-                //properties.ContentType = "text/plain";
 
                 channel.ConfirmSelect();
                 channel.BasicPublish(exchange: "", routingKey: _queueName, mandatory: true, basicProperties: properties, body: body);

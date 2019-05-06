@@ -10,25 +10,7 @@ namespace CodeChallenge.Simulation.MessageQueueing
     {
         public void EnqueMessage(String message)
         {
-
-            //var factory = new ConnectionFactory() { HostName = "localhost" };
-            //using (var connection = factory.CreateConnection())
-            //using (var channel = connection.CreateModel())
-            //{
-            //    channel.QueueDeclare(queue: "vehicleInsertMsgQ",
-            //                         durable: false,
-            //                         exclusive: false,
-            //                         autoDelete: false,
-            //                         arguments: null);
-
-            //    var body = Encoding.UTF8.GetBytes(jsonObject);
-            //    channel.BasicPublish(exchange: "",
-            //                         routingKey: "vehicleInsertMsgQ",
-            //                         basicProperties: null,
-            //                         body: body);
-            //}
-
-
+            
             string senderUniqueId = "vehicleInsertMsgQ";
 
             var factory = new ConnectionFactory() { HostName = "localhost", UserName = "guest", Password = "guest" };
