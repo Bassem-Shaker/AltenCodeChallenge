@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeChallenge.Simulation.Models\CodeChallenge.Simulation.Models.csproj" />
+    <ProjectReference Include="..\CodeChallenge.VehiclesCore.Interfaces\CodeChallenge.VehiclesCore.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

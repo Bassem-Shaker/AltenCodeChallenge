@@ -1,0 +1,49 @@
+<h2>Vehicles Overview</h2>
+<div class="row">
+    <div class="col-sm-5">
+        <select class="form-control" id="DDL_Customers" [(ngModel)]="filterCustomerID">
+            <option [value]="-1">Filter by customer</option>
+            <option *ngFor="let c of allCustomers" [ngValue]="c.id">{{c.name}}</option>
+        </select>
+    </div>
+    <div class="col-sm-5">
+        <select class="form-control" id="DDL_vehicleStatus" [(ngModel)]="filterIsConnected">
+            <option [value]="-1">Filter by vehicle Status</option>
+            <option *ngFor="let c of vehicleStatus" [ngValue]="c.id">{{c.type}}</option>
+        </select>
+    </div>
+    <div class="col-sm-2">
+        <button type="submit" (click)="executeSearch()"><i class="fa fa-search"></i></button>
+    </div>
+</div>
+
+<section class="wrapper">
+    <div class="container-fostrap">
+        <div class="content">
+            <div class="container">
+                <div class="row" *ngIf="VechicleModel!==undefine && !VechicleModel.length"> 
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="alert alert-info">
+                            No data.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4" *ngFor="let item of VechicleModel">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h2 class="card-title">VIN:{{item.vin}}</h2>
+                                <p class="card-text">Reg. nr. {{item.regnr}}</p>
+                                <p class="card-text">Customer: {{item.customerName}}</p>
+                                <div *ngIf="item.isconnected==1" class="text-success"> Connected </div>
+                                <div *ngIf="item.isconnected==0" class="text-danger"> Disconnected </div>
+                                <div *ngIf="item.isconnected==0" class="text-info"> Last ping: {{item.lastPingTime | date :'short'}} </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
