@@ -46,4 +46,15 @@ The portal Front End is developed by using angular 6 Single page application als
 ![image](https://user-images.githubusercontent.com/30432856/57258961-41854300-705e-11e9-9fd7-146862d5af7e.png)
 
 
+## Out of scope
+- User authentication and authorization
+- Security layer in the Microservices Architecture
+- Unit testing front end portal on old browsers.
+- Automation test
+- Scalable sql server database architecture
+- Dockerize the whole solution.
+- Use any free tier on any cloud platform 
 
+## Enhancement
+- Use Automapper to map model to ViewModel
+- Handle unexpected errors
