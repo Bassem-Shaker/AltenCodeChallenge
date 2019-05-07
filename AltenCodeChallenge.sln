@@ -44,6 +44,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C0E8470-3C8B-493C-B98A-0A00F12C2E81}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		scripts.ps1 = scripts.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{3DCC411E-B21A-4844-8072-B8CECFE60B04}"
@@ -51,6 +52,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "Database
 		DatabaseScripts\CustomerDatabase.sql = DatabaseScripts\CustomerDatabase.sql
 		DatabaseScripts\VehiclesDatabase.sql = DatabaseScripts\VehiclesDatabase.sql
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Support", "Support", "{DA603C76-5C58-47F3-BDDA-660B41EC28BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge.RunProjects", "Support\CodeChallenge.RunProjects\CodeChallenge.RunProjects.csproj", "{C493AD74-4846-48C8-BCAE-A026B160BD6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +123,10 @@ Global
 		{B20CAF4A-1C20-426F-A574-6C3A6CBC88A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20CAF4A-1C20-426F-A574-6C3A6CBC88A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20CAF4A-1C20-426F-A574-6C3A6CBC88A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C493AD74-4846-48C8-BCAE-A026B160BD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C493AD74-4846-48C8-BCAE-A026B160BD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C493AD74-4846-48C8-BCAE-A026B160BD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C493AD74-4846-48C8-BCAE-A026B160BD6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +147,7 @@ Global
 		{0EA3A51D-B057-4656-8004-ECB400FE8A29} = {4D0FEEA2-D9D8-4B52-A23C-1969F58C21F7}
 		{D1E9AE70-5F3F-4B62-82FB-9BA173699284} = {4D0FEEA2-D9D8-4B52-A23C-1969F58C21F7}
 		{B20CAF4A-1C20-426F-A574-6C3A6CBC88A6} = {B96B2BE7-ACAD-47A2-A2DC-1D4FAD310E91}
+		{C493AD74-4846-48C8-BCAE-A026B160BD6B} = {DA603C76-5C58-47F3-BDDA-660B41EC28BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3932191-A812-4F23-B172-7B59D55E574D}
