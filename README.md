@@ -96,6 +96,7 @@ Vehicles Data on SQL database
 - SQL Server Management Studio 2014 or greater
 - Visual Studio 2017 Professional or Community Edition
 - .NET Core 2.1 
+- Erlang tool for RabbitMQ from [here](http://www.erlang.org/downloads) programming language
 - RabbitMQ: you can download it from [here](https://www.rabbitmq.com/install-windows.html)
 - NodeJS 10.13.0 or greater
 - Angular CLI
