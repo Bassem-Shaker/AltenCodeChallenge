@@ -96,13 +96,13 @@ Vehicles Data on SQL database
 - SQL Server Management Studio 2014 or greater
 - Visual Studio 2017 Professional or Community Edition
 - .NET Core 2.1 
-- RabbitMQ
+- RabbitMQ: you can download it from [here](https://www.rabbitmq.com/install-windows.html)
 - NodeJS 10.13.0 or greater
 - Angular CLI
 
 ## Deployment Steps
 1. Clone or download the projects from repo.
-2. Run the 2 scripts on folder \[Repo path]\AltenCodeChallenge\DatabaseScripts on SQL Server.
+2. Run the 2 scripts on folder \[Repo path]\AltenCodeChallenge\DatabaseScripts on SQL Server. db connection are configured in CodeChallenge.Customers & CodeChallenge.VehiclesCore appsettings.json file. default connection as  
 3. Navigate to the folder AltenCodeChallenge\Support and double click 1-buildAll.bat file to build all projects 
 4. Once you have everything built you can begin to run the applications.  you can start up all the back-end Web API applications by executing the DOS batch file 2-StartDevelopmentWebServers.bat from the Support folder. This file executes a custom built .NET Core application called CodeChallenge.RunProjects that will start up all the back-end processes for the  application. 
 5. Build the Angular 6 front-end application: using DOS command window and navigate to [solution physical path]\AltenCodeChallenge\CodeChallenge.PortalWeb\Portal folder and then execute: ng build
