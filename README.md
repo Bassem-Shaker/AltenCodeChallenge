@@ -106,8 +106,8 @@ Vehicles Data on SQL database
 2. Run the 2 scripts on folder [solution physical path]\DatabaseScripts on SQL Server. db connection are configured in CodeChallenge.Customers & CodeChallenge.VehiclesCore appsettings.json file. default connection as windows authentication on local machine.
 3. Navigate to the folder [solution physical path]\Support and double click 1-buildAll.bat file to build all projects 
 4. Once you have everything built you can begin to run the applications.  you can start up all the back-end Web API applications by executing the DOS batch file 2-StartDevelopmentWebServers.bat from the Support folder. This file executes a custom built .NET Core application called CodeChallenge.RunProjects that will start up all the back-end processes for the  application. 
-5. Build the Angular 6 front-end application: using DOS command window and navigate to [solution physical path]\CodeChallenge.PortalWeb\Portal folder and then execute: npm install
-6. once finished execute the Angular CLI command: ng serve on the directory
+5. Build the Angular 6 front-end application: using DOS command window and navigate to [solution physical path]\CodeChallenge.PortalWeb\Portal folder and then execute: *npm install*
+6. once finished execute the Angular CLI command: *ng serve* on the directory
 7. to access the Microservices Portal application, navigate to http://localhost:4200 in your browser
 
 ## Out of scope
