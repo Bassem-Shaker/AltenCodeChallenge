@@ -92,6 +92,12 @@ Vehicles Data on SQL database
 ![image](https://user-images.githubusercontent.com/30432856/57306256-ce71e000-70e2-11e9-83c4-184427b9c348.png)
 
 
+## Deployment Steps
+1. Clone or download the projects from repo.
+2. Run the 2 scripts on folder \[Repo path]\AltenCodeChallenge\DatabaseScripts on SQL Server.
+3. 
+
+
 ## Out of scope
 - User authentication and authorization
 - Security layer in the Microservices Architecture
