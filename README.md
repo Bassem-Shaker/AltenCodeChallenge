@@ -8,6 +8,7 @@
 - Communication between microservices using [RABBIT MQ](https://www.rabbitmq.com/)
 - [Swagger(OpenAPI Specification)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-2.2) for API documentation.
 - [Angular 6](https://angular.io/)
+- HTML, CSS & [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 
 ## Solution Architecture:
 This task divide into the following main microservices & components
@@ -15,15 +16,16 @@ This task divide into the following main microservices & components
 
 2. **Customers Service**: It provides basic information about each customer such as name, address and it will include any customer contacts information, Zip codes, phones, customer companies. and designed to Add/update/delete any customer data and feed any other microservice with these data.   
 
-3. **Vehicles Simulation MessageQueueing Service**: it simulate the real vehicles ping which as it runs on the background processing and scheduling with IHostedService which runs every one minute to raise event only if the vehicle is chosen randomly to be connected thus will send asynchronous event to the event bus (RabbitMQ) so other services can react.   
+3. **Vehicles Simulation MessageQueueing Service**: it simulate the real vehicles ping which as it runs on the background processing and scheduling with IHostedService which runs every one minute to raise event only if the vehicle is chosen randomly to be connected thus will send asynchronous event to the event bus (RabbitMQ) so other services can react and it will listen for acknowledgement receive.   
 
-4. **Vehicles service** a sole purpose of this service is responsible for managing vehicle pings thus logging the vehicles data as well update each machine with its status on SQL DB. It subscribes to events related to vehicles Simulation MessageQueueing lifecycle.
-Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status.
+4. **Vehicles service** a sole purpose of this service is responsible for managing vehicle pings thus logging the vehicles data as well update each machine with its status on SQL DB. It subscribes to events related to vehicles Simulation MessageQueueing lifecycle and reacted with sending acknowledgement.
+Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status. its optional to split this service to two microservice, one to handle vehicle API and another microservice to subscribes to events related to vehicles Simulation.
 
 5. **RabbitMQ**: responsible for the communication between microservices
 You can find architectural diagram of the task below.
 
-![Untitled Diagram (1)](https://user-images.githubusercontent.com/30432856/57252593-c9625180-704c-11e9-8ae0-c1ac3cc7a605.png)
+![Diagram ](https://user-images.githubusercontent.com/30432856/57286173-03ffd480-70b5-11e9-9ec7-6cdd454f5afb.png)
+
 
 ## Solution Structure
 Solution (source code above) is using heavily Dependency Injection (DI) design pattern that reduces hard-coded dependencies between the classes by injecting these dependencies at run-time, instead of during design-time thus it used to control which data set is passed to the control logic (test data vs real database).
@@ -46,6 +48,56 @@ The portal Front End is developed by using angular 6 Single page application als
 ![image](https://user-images.githubusercontent.com/30432856/57258961-41854300-705e-11e9-9fd7-146862d5af7e.png)
 
 
+## How to browse 
+- Navigate to http://localhost:52845//swagger/index.html to browse Customers Web API
+- Navigate To http://localhost:53373//swagger/index.html to browse Vehicles Web API
+- Navigate to http://localhost:63341/api/values to see the random simulation status of vehicles status
+- Naviagte to http://localhost:4200/ to see Fron End portal
+
+
+Cutomers API
+
+![image](https://user-images.githubusercontent.com/30432856/57304224-3b837680-70df-11e9-8254-368bfd2e90c1.png)
+
+![image](https://user-images.githubusercontent.com/30432856/57304797-45f24000-70e0-11e9-930c-a14bd28fbc62.png)
+
+Vehicles Web API
+
+![image](https://user-images.githubusercontent.com/30432856/57304884-63270e80-70e0-11e9-8e53-8a34b6e7861e.png)
+
+![image](https://user-images.githubusercontent.com/30432856/57304951-85b92780-70e0-11e9-8db2-281b968dcd0e.png)
+
+Simulation status
+
+![image](https://user-images.githubusercontent.com/30432856/57306033-5b686980-70e2-11e9-9161-bce1da0d860c.png)
+
+
+Portal Front END (all Vehicles)
+
+![image](https://user-images.githubusercontent.com/30432856/57305453-679ff700-70e1-11e9-9271-3c1aeeb2ed23.png)
+
+Portal Front END (filter Vehicles by specific customer)
+
+![image](https://user-images.githubusercontent.com/30432856/57305533-88684c80-70e1-11e9-8f08-3e4a92f2518c.png)
+
+
+Customers tables data (SQL Server)
+
+![image](https://user-images.githubusercontent.com/30432856/57306124-8eaaf880-70e2-11e9-8522-c7deb65a7d78.png)
+
+
+
+Vehicles Data on SQL database
+
+![image](https://user-images.githubusercontent.com/30432856/57306256-ce71e000-70e2-11e9-83c4-184427b9c348.png)
+
+
+## Deployment Steps
+1. Clone or download the projects from repo.
+2. Run the 2 scripts on folder \[Repo path]\AltenCodeChallenge\DatabaseScripts on SQL Server.
+3. 
+
+
 ## Out of scope
 - User authentication and authorization
 - Security layer in the Microservices Architecture
@@ -56,5 +108,8 @@ The portal Front End is developed by using angular 6 Single page application als
 - Use any free tier on any cloud platform 
 
 ## Enhancement
+- Using an API Gateway in Microservices Architecture
+- Using SignalR to allow server code to send asynchronous notifications to client-side web applications.
 - Use Automapper to map model to ViewModel
-- Handle unexpected errors
+- Handle unexpected errors.
+
