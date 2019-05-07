@@ -19,7 +19,7 @@ This task divide into the following main microservices & components
 3. **Vehicles Simulation MessageQueueing Service**: it simulate the real vehicles ping which as it runs on the background processing and scheduling with IHostedService which runs every one minute to raise event only if the vehicle is chosen randomly to be connected thus will send asynchronous event to the event bus (RabbitMQ) so other services can react and it will listen for acknowledgement receive.   
 
 4. **Vehicles service** a sole purpose of this service is responsible for managing vehicle pings thus logging the vehicles data as well update each machine with its status on SQL DB. It subscribes to events related to vehicles Simulation MessageQueueing lifecycle and reacted with sending acknowledgement.
-Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status.
+Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status. its optional to split this service to two microservice, one to handle vehicle API and another microservice to subscribes to events related to vehicles Simulation.
 
 5. **RabbitMQ**: responsible for the communication between microservices
 You can find architectural diagram of the task below.
@@ -61,5 +61,5 @@ The portal Front End is developed by using angular 6 Single page application als
 - Using an API Gateway in Microservices Architecture
 - Using SignalR to allow server code to send asynchronous notifications to client-side web applications.
 - Use Automapper to map model to ViewModel
-- Handle unexpected errors
+- Handle unexpected errors.
 
