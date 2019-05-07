@@ -67,6 +67,11 @@ Vehicles Web API
 
 ![image](https://user-images.githubusercontent.com/30432856/57304951-85b92780-70e0-11e9-8db2-281b968dcd0e.png)
 
+Simulation status
+
+![image](https://user-images.githubusercontent.com/30432856/57306033-5b686980-70e2-11e9-9161-bce1da0d860c.png)
+
+
 Portal Front END (all Vehicles)
 
 ![image](https://user-images.githubusercontent.com/30432856/57305453-679ff700-70e1-11e9-9271-3c1aeeb2ed23.png)
@@ -74,6 +79,17 @@ Portal Front END (all Vehicles)
 Portal Front END (filter Vehicles by specific customer)
 
 ![image](https://user-images.githubusercontent.com/30432856/57305533-88684c80-70e1-11e9-8f08-3e4a92f2518c.png)
+
+
+Customers tables data (SQL Server)
+
+![image](https://user-images.githubusercontent.com/30432856/57306124-8eaaf880-70e2-11e9-8522-c7deb65a7d78.png)
+
+
+
+Vehicles Data on SQL database
+
+![image](https://user-images.githubusercontent.com/30432856/57306256-ce71e000-70e2-11e9-83c4-184427b9c348.png)
 
 
 ## Out of scope
