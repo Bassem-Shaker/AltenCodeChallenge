@@ -1,8 +1,8 @@
 # AltenCodeChallenge
 
-## These tasks include:
+## This challenge task include:
 - [.Net Core](https://docs.microsoft.com/en-us/dotnet/core/) 
-- [.Net core web API](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.2)
+- [.Net Core Web API](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.2)
 - Accessing data sources using [Entity Framework core](https://docs.microsoft.com/en-us/ef/core/get-started/netcore/) with SQL Server
 - [Xunit](https://xunit.net/)
 - Communication between microservices using [RABBIT MQ](https://www.rabbitmq.com/)
@@ -12,16 +12,17 @@
 
 ## Solution Architecture:
 This task divide into the following main microservices & components
-1. **Front End Portal**: angular Single Page Application (designed & implemented to support module Lazy loading) that provides users the ability to see An overview of all vehicles on one page (full-screen display), together with their status, the vehicles information as well the last ping time if the vehicle is down. It is real time overview page for the current vehicles status. Also the use able to filter, to only show vehicles for a specific customer or filter to only show vehicles that have a specific status.
+1. **Front End Portal**: angular Single Page Application (designed & implemented to support module Lazy loading) that provides users the ability to see An overview of all vehicles on one page (full-screen display), together with their status, the vehicles information as well the last ping time if the vehicle is down. It is real time overview page for the current vehicles status. Also the user able to filter, to only show vehicles for a specific customer or show vehicles that have a specific status.
 
 2. **Customers Service**: It provides basic information about each customer such as name, address and it will include any customer contacts information, Zip codes, phones, customer companies. and designed to Add/update/delete any customer data and feed any other microservice with these data.   
 
 3. **Vehicles Simulation MessageQueueing Service**: it simulate the real vehicles ping which as it runs on the background processing and scheduling with IHostedService which runs every one minute to raise event only if the vehicle is chosen randomly to be connected thus will send asynchronous event to the event bus (RabbitMQ) so other services can react and it will listen for acknowledgement receive.   
 
 4. **Vehicles service** a sole purpose of this service is responsible for managing vehicle pings thus logging the vehicles data as well update each machine with its status on SQL DB. It subscribes to events related to vehicles Simulation MessageQueueing lifecycle and reacted with sending acknowledgement.
-Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status. its optional to split this service to two microservice, one to handle vehicle API and another microservice to subscribes to events related to vehicles Simulation.
+Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status. There is an option to split this service to two microservice, one to handle vehicle API and another microservice to subscribe to events related to vehicles Simulation.
 
-5. **RabbitMQ**: responsible for the communication between microservices
+5. **RabbitMQ**: responsible for the communication between microservices.
+
 You can find architectural diagram of the task below.
 
 ![Diagram ](https://user-images.githubusercontent.com/30432856/57286173-03ffd480-70b5-11e9-9ec7-6cdd454f5afb.png)
@@ -30,15 +31,15 @@ You can find architectural diagram of the task below.
 ## Solution Structure
 Solution (source code above) is using heavily Dependency Injection (DI) design pattern that reduces hard-coded dependencies between the classes by injecting these dependencies at run-time, instead of during design-time thus it used to control which data set is passed to the control logic (test data vs real database).
 
-Below is a fragment of the solution presents on (visual studio 2017). solution  There are four folders, Each folder contains the projects related to each microservices as well the Frontend project, I would split them into separate each service on a standalone solution but for POC, I created all of them on one solution however there is no direct dependency between them (all microservice using RabbitMQ).  
+Below is a fragment of the solution presents on (visual studio 2017) solution.  There are four folders, Each folder contains the projects related to each microservices as well the Frontend project, I would split them into separate each service on a standalone solution but for POC, I created all of them on one solution however there is no direct dependency between them (all microservice using RabbitMQ to communicate).  
 
 
 ![image](https://user-images.githubusercontent.com/30432856/57258133-c753bf00-705b-11e9-8808-2161c40cdde3.png)
 
 
 
-Each microservice "CustomersMicroservice,VehiclesCoreMicroservice" service" has:  
-- Its own models and interfaces that exposed to the external world throughout the WebAPI
+Each microservice "CustomersMicroservice,VehiclesCoreMicroservice" service has:  
+- Its own model and interfaces that exposed to the external world throughout the WebAPI
 - Data access layer through Entity framework are encapsulated on one layer
 - Unit test each above service by using Xunit.
 - listeners (for events delivered via queue) and REST Clients (for handling outgoing http requests).
