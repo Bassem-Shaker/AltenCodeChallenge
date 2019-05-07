@@ -48,6 +48,34 @@ The portal Front End is developed by using angular 6 Single page application als
 ![image](https://user-images.githubusercontent.com/30432856/57258961-41854300-705e-11e9-9fd7-146862d5af7e.png)
 
 
+## How to browse 
+- Navigate to http://localhost:52845//swagger/index.html to browse Customers Web API
+- Navigate To http://localhost:53373//swagger/index.html to browse Vehicles Web API
+- Navigate to http://localhost:63341/api/values to see the random simulation status of vehicles status
+- Naviagte to http://localhost:4200/ to see Fron End portal
+
+
+Cutomers API
+
+![image](https://user-images.githubusercontent.com/30432856/57304224-3b837680-70df-11e9-8254-368bfd2e90c1.png)
+
+![image](https://user-images.githubusercontent.com/30432856/57304797-45f24000-70e0-11e9-930c-a14bd28fbc62.png)
+
+Vehicles Web API
+
+![image](https://user-images.githubusercontent.com/30432856/57304884-63270e80-70e0-11e9-8e53-8a34b6e7861e.png)
+
+![image](https://user-images.githubusercontent.com/30432856/57304951-85b92780-70e0-11e9-8db2-281b968dcd0e.png)
+
+Portal Front END (all Vehicles)
+
+![image](https://user-images.githubusercontent.com/30432856/57305453-679ff700-70e1-11e9-9271-3c1aeeb2ed23.png)
+
+Portal Front END (filter Vehicles by specific customer)
+
+![image](https://user-images.githubusercontent.com/30432856/57305533-88684c80-70e1-11e9-8f08-3e4a92f2518c.png)
+
+
 ## Out of scope
 - User authentication and authorization
 - Security layer in the Microservices Architecture
