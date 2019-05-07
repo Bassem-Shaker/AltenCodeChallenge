@@ -8,6 +8,7 @@
 - Communication between microservices using [RABBIT MQ](https://www.rabbitmq.com/)
 - [Swagger(OpenAPI Specification)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-2.2) for API documentation.
 - [Angular 6](https://angular.io/)
+- HTML, CSS & [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 
 ## Solution Architecture:
 This task divide into the following main microservices & components
@@ -15,15 +16,16 @@ This task divide into the following main microservices & components
 
 2. **Customers Service**: It provides basic information about each customer such as name, address and it will include any customer contacts information, Zip codes, phones, customer companies. and designed to Add/update/delete any customer data and feed any other microservice with these data.   
 
-3. **Vehicles Simulation MessageQueueing Service**: it simulate the real vehicles ping which as it runs on the background processing and scheduling with IHostedService which runs every one minute to raise event only if the vehicle is chosen randomly to be connected thus will send asynchronous event to the event bus (RabbitMQ) so other services can react.   
+3. **Vehicles Simulation MessageQueueing Service**: it simulate the real vehicles ping which as it runs on the background processing and scheduling with IHostedService which runs every one minute to raise event only if the vehicle is chosen randomly to be connected thus will send asynchronous event to the event bus (RabbitMQ) so other services can react and it will listen for acknowledgement receive.   
 
-4. **Vehicles service** a sole purpose of this service is responsible for managing vehicle pings thus logging the vehicles data as well update each machine with its status on SQL DB. It subscribes to events related to vehicles Simulation MessageQueueing lifecycle.
+4. **Vehicles service** a sole purpose of this service is responsible for managing vehicle pings thus logging the vehicles data as well update each machine with its status on SQL DB. It subscribes to events related to vehicles Simulation MessageQueueing lifecycle and reacted with sending acknowledgement.
 Also it's provide front end with the indeed vehicle information as well search capabilities by customer or machine status.
 
 5. **RabbitMQ**: responsible for the communication between microservices
 You can find architectural diagram of the task below.
 
-![Untitled Diagram (1)](https://user-images.githubusercontent.com/30432856/57252593-c9625180-704c-11e9-8ae0-c1ac3cc7a605.png)
+![Diagram ](https://user-images.githubusercontent.com/30432856/57286173-03ffd480-70b5-11e9-9ec7-6cdd454f5afb.png)
+
 
 ## Solution Structure
 Solution (source code above) is using heavily Dependency Injection (DI) design pattern that reduces hard-coded dependencies between the classes by injecting these dependencies at run-time, instead of during design-time thus it used to control which data set is passed to the control logic (test data vs real database).
@@ -57,6 +59,7 @@ The portal Front End is developed by using angular 6 Single page application als
 
 ## Enhancement
 - Using an API Gateway in Microservices Architecture
+- Using SignalR to allow server code to send asynchronous notifications to client-side web applications.
 - Use Automapper to map model to ViewModel
 - Handle unexpected errors
 
